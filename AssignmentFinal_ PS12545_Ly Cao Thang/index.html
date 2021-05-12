@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="index.css" rel="stylesheet"/>
+    <title>Assignment GĐ2</title>
+  
+
+    </head>
+<body>
+  <div class="bocuc">
+<header>
+  <div class="hinhanh">
+  </div>
+
+</header>
+<nav>
+   <ul class="menu">
+    <li> <a href="1">HOME PAGE</a>
+      <ul class="vmenu">
+        <li><a href="homepage.html">Event 1</a></li> 
+        <li><a href="homepage.html">Event 2</a></li>
+        <li><a href="homepage.html">Event 3</a></li>
+        <li><a href="homepage.html">Event 4</a></li>
+        <li><a href="homepage.html">Event 5</a></li>
+      </ul>
+    </li>
+
+    <li> <a href="1">VIDEO</a>
+      <ul class="vmenu">
+        <li><a href="https://www.youtube.com/embed/l77BI2VhmzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Video 1</a></li> 
+        <li><a href="https://www.youtube.com/embed/c9lMKycALWs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Video 2</a></li>
+        <li><a href="https://www.youtube.com/embed/1eKThHkYFJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Video 3</a></li>
+        <li><a href="https://www.youtube.com/embed/RAAP4bs1rew" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Video 4</a></li>
+        <li><a href="https://www.youtube.com/embed/QPVwts6TZXk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Video 5</a></li>
+      </ul>
+    </li>
+
+    <li> <a href="1">FILMS</a>
+      <ul class="vmenu">
+        <li><a href="https://www.starwars.com/films">FILMS STAR WARS</a></li> 
+      </ul>
+    </li>
+
+    <li> <a href="1">SERIES</a>
+      <ul class="vmenu">
+        <li><a href="series.html">Series Star Wars</a></li> 
+      </ul>
+    </li>
+
+    <li> <a href="1">DATABANK</a>
+      <ul class="vmenu">
+        <li><a href="databank.html">Databank Star Wars </a></li> 
+      </ul>
+    </li>
+  </ul>
+</nav>
+<aside>
+<div class="g">
+  <button><a href="index2.html">Qua bài 2 </a></button> 
+  <button><a href="index3.html">Qua bài 3 </a></button> 
+</div>
+<br>
+<br>
+
+
+  <div class="thang7">
+    <input id="PRE" type="button"  value="Lùi">
+    <input id="NEXT" type="button" value="Tiến">
+    <input id="FIRT" type="button" value="FIRT">
+    <input id="LAST" type="button" value="LAST">
+    </div>
+<img src="images2/anh6.jpg" height="500" width="900" >
+<div class="thangly">
+  <h4 class="count">Ảnh 1/20</h4><br><br><br><br><br>
+</div>
+
+<script>
+    var album=['anh6.jpg','banner.png','anhgif.png','anh4.png','anh5.png',
+    'anh3.jpg','anh7.jpg','anh8.jpg','anh9.jpg','anh10.jpg','anh11.png','anh12.jpg','anh13.jpg',
+    'anh14.png','anh15.jpg','anh16.jpg','anh17.jpg','anh18.jpg','anh19.jpg','anh20.jpg',];
+    var gggimg=0;
+    document.querySelector('#NEXT').addEventListener('click',function(){
+      if(gggimg==album.length-1){
+          gggimg=0;
+      }
+      else{
+          gggimg++;
+      }
+        let t=gggimg +1;
+         document.querySelector('img').src=`images2/${album[gggimg]}`;
+         document.querySelector('.count').innerHTML='Ảnh'+t+'/20';
+  });
+    document.querySelector('#PRE').addEventListener('click',function(){
+      if(gggimg==0){
+        gggimg=album.length-1;
+
+      }else{
+        gggimg--;
+      }
+            let t=gggimg +1;
+            document.querySelector('img').src=`images2/${album[gggimg]}`;
+       
+        document.querySelector('.count').innerHTML='Ảnh'+t+'/20';
+  });
+        document.querySelector('#FIRT').addEventListener('click',function(){
+           
+                gggimg=0;
+            
+          
+            document.querySelector('img').src=`images2/${album[gggimg]}`;
+            document.querySelector('.count').innerHTML='Ảnh'+1+'/20';;
+        } );
+        
+        document.querySelector('#LAST').addEventListener('click',function(){
+           gggimg=album.length-1;
+            document.querySelector('img').src=`images2/${album[gggimg]}`;
+            document.querySelector('.count').innerHTML='Ảnh'+20+'/20';
+        } );
+
+       function slideshows(){
+        let t=gggimg +1;
+         document.querySelector('img').src=`images2/${album[gggimg]}`;
+         document.querySelector('.count').innerHTML='Ảnh' +t+'/20';
+         gggimg++;
+         if(gggimg==album.length){
+           gggimg=0;
+        
+         }
+        
+         
+ 
+         setTimeout("slideshows()",5000);
+       }
+       slideshows();
+
+      
+     </script>
+
+
+
+
+
+</aside>
+
+<article>
+</article>
+  </body>
+
+</html>    

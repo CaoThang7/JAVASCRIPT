@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="index.css" rel="stylesheet"/>
+    <title>Assignment GĐ2</title>
+  
+
+    </head>
+<body>
+  <div class="bocuc">
+<header>
+  <div class="hinhanh">
+  </div>
+
+</header>
+<nav>
+   <ul class="menu">
+    <li> <a href="1">HOME PAGE</a>
+      <ul class="vmenu">
+        <li><a href="homepage.html">Event 1</a></li> 
+        <li><a href="homepage.html">Event 2</a></li>
+        <li><a href="homepage.html">Event 3</a></li>
+        <li><a href="homepage.html">Event 4</a></li>
+        <li><a href="homepage.html">Event 5</a></li>
+      </ul>
+    </li>
+
+    <li> <a href="1">VIDEO</a>
+      <ul class="vmenu">
+        <li><a href="https://www.youtube.com/embed/l77BI2VhmzA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Video 1</a></li> 
+        <li><a href="https://www.youtube.com/embed/c9lMKycALWs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Video 2</a></li>
+        <li><a href="https://www.youtube.com/embed/1eKThHkYFJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Video 3</a></li>
+        <li><a href="https://www.youtube.com/embed/RAAP4bs1rew" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Video 4</a></li>
+        <li><a href="https://www.youtube.com/embed/QPVwts6TZXk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Video 5</a></li>
+      </ul>
+    </li>
+
+    <li> <a href="1">FILMS</a>
+      <ul class="vmenu">
+        <li><a href="https://www.starwars.com/films">FILMS STAR WARS</a></li> 
+      </ul>
+    </li>
+
+    <li> <a href="1">SERIES</a>
+      <ul class="vmenu">
+        <li><a href="series.html">Series Star Wars</a></li> 
+      </ul>
+    </li>
+
+    <li> <a href="1">DATABANK</a>
+      <ul class="vmenu">
+        <li><a href="databank.html">Databank Star Wars </a></li> 
+      </ul>
+    </li>
+  </ul>
+</nav>
+<article>
+
+    <div class="g">
+        <button><a href="index.html">VỀ bài 1 </a></button> 
+        <button><a href="index3.html">Qua bài 3 </a></button> 
+      </div>
+
+
+    <div class="bocuc">
+        <center>ĐĂNG KÝ THÔNG TIN</center>
+        <form onsubmit="return kiemTra()">
+          <p>
+            <div class="from-group">
+              <label>Mã sinh viên:</label>
+              <br>
+              <input type="text" id="maSV" class="form-control" tabindex="1" placeholder="PS...(5số)" />
+              </div>
+              </p>
+        
+          <p>
+            <div class="from-group">
+              <label>Họ Tên:</label>
+              <br>
+              <input type="text" id="hoTen" class="form-control" tabindex="1"placeholder="..." />
+              </div>
+              </p>
+      
+      
+              <p>
+                <div class="from-group">
+                  <label>Gmail:</label>
+                  <br>
+                  <input type="email"  name="email" id="email" class="form-control" tabindex="1" placeholder="...@fpt.edu.vn  (or  ...@gmail.com)"/>
+                  </div>
+                  </p>
+      
+              <div class="from-group">
+                <div class="form-control">
+              <p>
+                <fieldset>
+                  <legend><label> Giới tính:</label></legend>
+                  <input type="radio" name="sex">Nam
+                  <input type="radio" name="sex">Nữ
+                  </p>
+                </fieldset>
+               </div>
+               </div>
+      
+      <br>
+               <div class="from-group">
+                <div class="form-control">
+              <p>
+                <fieldset>
+                  <legend><label> Chọn sever:</label></legend>
+                  <input type="radio" name="sever">Sao hoả
+                  <input type="radio" name="sever">Sao thuỷ
+                  <input type="radio" name="sever">Sao thổ
+                  <input type="radio" name="sever">Sao chổi
+                  <input type="radio" name="sever">Khác
+                  </p>
+                </fieldset>
+               </div>
+               </div>
+      <br>
+      
+      
+      <div class="form-group"></div>
+      
+        <label>CITY: </label>
+        <br>
+      
+       <select id='quocTich'>
+      <option></option>
+      <option value="VN">Việt Nam</option>
+      <option value="US">America</option>
+      <option value="Italia">Italia</option>
+      <option value="JaPan">Japan</option>
+      <option value="China">China</option>
+       </select>
+      
+      </div>
+      
+      
+      
+      <br>
+      
+      <br>
+               <br>
+               <div class="form-group">
+                <label>Ghi chú:</label>
+                <br>
+              <td>
+                  <textarea cols="200" rows="15" id="ghichu" ></textarea>
+              </td>
+             </div>
+             
+      
+             <br>
+              <button>Đăng kí ngay</button>
+          </form>
+          <br>
+          <center><div class="thang">
+      
+          <ul id="loi">
+            
+          </ul>
+          <img src="images/loi.png" width="400px" height="200px"/>
+      
+          </center>
+          </div>
+      
+      
+      
+      
+      
+      <script>
+        function kiemTra(){
+            var isvalid=true;
+            var sumloi="";
+            //code kiểm tra hợp lệ các thành phần trong thẻ form
+            //Kiểm tra họ tên
+            var ht=document.querySelector('#hoTen').value;
+            if(ht.length==0){
+                isvalid=false;
+                sumloi+="<li>Bạn chưa nhập họ tên</li>";
+            }
+          
+      
+            //Kiểm tra mã sinh viên
+             //code kiểm tra hợp lệ các thành phần trong thẻ form
+             var htt=document.querySelector('#maSV').value;
+            if(htt.length==0){
+                isvalid=false;
+                sumloi+="<li>Bạn chưa nhập mã sinh viên</li>";
+            }
+      
+      
+            //Kiểm tra email
+            var gmail=document.querySelector('#email').value;
+            var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                  if(regex.test(gmail)) {
+                      isvalid= true;
+            }else{
+              isvalid=false;
+                sumloi+="<li>Bạn nhập sai gmail</li>";
+            }
+            if(gmail.length==0){
+                isvalid=false;
+                sumloi+="<li>Bạn chưa nhập gmail</li>";
+            }
+      
+      
+            //kiểm tra giới tính
+            var hopLe=false;
+            var gt=document.querySelectorAll('[name="sex"]');
+            gt.forEach(s=>{
+            if(s.checked){
+                hopLe=true;
+            }
+            });
+            if(hopLe==false){
+                isvalid=false;
+                sumloi+="<li>Bạn chưa chọn giới tính</li>";
+            }
+      
+            
+            //Kiểm tra sever
+            var hopLe=false;
+            var gt=document.querySelectorAll('[name="sever"]');
+            gt.forEach(s=>{
+            if(s.checked){
+                hopLe=true;
+            }
+            });
+            if(hopLe==false){
+                isvalid=false;
+                sumloi+="<li>Bạn chưa chọn sever</li>";
+            }
+            
+      
+            //Kiểm tra quốc tịch
+            var quoctich=document.querySelector('#quocTich').value;
+            if(quoctich.length==0){
+                isvalid=false;
+                sumloi+="<li>Bạn chưa chọn quốc tịch!</li>";
+            }
+      
+            
+      
+      
+            //Kiểm tra ghi chú
+            var ghichu=document.querySelector('#ghichu').value;
+            if(ghichu.length==0){
+                isvalid=false;
+                sumloi+="<li>Bạn chưa nhập ghi chú</li>";
+            }
+            if(ghichu.length<5||ghichu.length>200){
+               isvalid=false;
+               sumloi+="<li>Lưu ý ghi chú phải >=5 kí tự và <=200 kí tự!</li>";
+           }
+           
+      
+      
+      
+            //Xuất lỗi
+            if(isvalid==false){
+                document.querySelector('#loi').innerHTML=sumloi;
+                document.querySelector('#loi').style.color="Blue";
+            }else{
+              alert("Đăng kí thành công!");
+              location.reload(); 
+            }
+           return isvalid;
+        }
+       
+       </script>
+
+
+
+</article>
+
+
+  </body>
+
+</html>    

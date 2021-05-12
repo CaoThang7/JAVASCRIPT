@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>My website</title>
+    <script src="https://code.angularjs.org/1.7.9/angular.min.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <div class="g">
+        <button><a href="index.html">Về bài 1 </a></button> 
+        <button><a href="index2.html">Về bài 2 </a></button> 
+      </div>
+      <div class="form-group"></div>
+      
+      <label>Mức giá: </label>
+      <br>
+    
+     <select id='quocTich'>
+    <option></option>
+    <option value="VN">100</option>
+    <option value="US">200</option>
+    <option value="Italia">300</option>
+    <option value="JaPan">400</option>
+    <option value="China">500</option>
+    <option value="China">600</option>
+    <option value="China">700</option>
+    <option value="China">800</option>
+    <option value="China">900</option>
+    <option value="China">1000</option>
+     </select>
+    
+    </div>
+    <div class="card" ng-controller="myController">
+      <div class="card-header">
+       <center><h2> BÁN HÀNG </h2></center>
+      </div>
+      
+      <div class="card-body">
+          <table class="table table-bordered">
+            <thead>
+                <tr>
+                  <th></th>
+                  <th>TÊN HÀNG</th>                  
+                  <th>SỐ LƯỢNG </th>
+                  <th>ĐƠN GIÁ</th>
+                  <th>THÀNH TIỀN </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat='p in thang'>
+                  <td><input type="checkbox" ng-model='p.isBuy' ></td>
+                  <td>{{p.tenSP}}</td>
+                  <td><input type="number" ng-model='p.soLuong' ng-disabled='!p.isBuy'></td>
+                  <td>{{p.donGia}}</td>
+                  <td>{{p.soLuong*p.donGia}}</td>
+                </tr>   
+            </tbody>
+        </table>
+      </div>
+        <div class="card-footer">
+            TỔNG TIỀN: {{tinhTong()}}
+        </div>
+      </div>
+    </div>
+    <script src="JS/myAssignment.js">
+
+    </script>
+</body>
+</html>

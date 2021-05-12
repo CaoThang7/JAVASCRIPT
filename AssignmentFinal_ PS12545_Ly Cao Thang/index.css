@@ -1,0 +1,442 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+.bocuc{
+    max-width: 1260px;
+    margin: 0 auto ;
+}
+div header{  
+    background-size: 100% 100%;
+    height:0px;
+    padding-bottom: 30%;  
+    color:white; 
+    background-image: url('images2/banner.png');
+}
+header button {
+    border: 2px solid white;
+    height: 50px;
+    font-size: 20px;
+    background-color: black;
+    margin-top: 200px;
+}
+header button a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+header button a:hover{
+    color: yellow;
+}
+
+.hinhanh input{
+    float: right;
+   height: 10px;
+   padding: 14px;
+   margin: 14px;
+}
+.bocuc nav{
+    min-height: 70px;
+    width: 100%;
+    float: left;
+    background-image: url('images/anhbocuc.jpg');
+}
+.bocuc aside{
+    min-height: 500px;
+    width: 100%;
+    background-color:red;
+    float: left;
+    background-image: url('images/ngoisao.jpg');
+}
+.bocuc article{
+    background-image: url('images/ngoisao2.png');
+}
+
+.bocuc main{
+    min-height: 500px;
+    width: 100%;
+    background-color:yellow;
+    float: left;
+    background-image: url('images/ngoisao.jpg');
+}
+
+.bocuc footer{
+    min-height: 500px;
+    width: 100%;
+    background-color:yellow;
+    float: left;
+    background-image: url('images/ngoisao.jpg');
+}
+footer img{
+    height: 400px;
+    margin-top: 0px;
+    opacity: 0.3;
+}
+div.thangg {
+    color: white;
+    width: 450px;
+    height: 200px;
+    padding: 500x;
+    margin-left: 400px;
+    margin-top: -500px;
+    border-radius: 7px;
+    background-size:100% 100% ;
+}
+div.thangg img{
+    width: 50px;
+    height: 50px;
+   margin-top: -1000px;
+   padding: 40px;
+    
+}
+div.thangg h2{
+    margin-top: 190px;
+    font-size: 20px;
+}
+.bocuc nav a{
+    color: white;
+    text-decoration: none;
+    margin:  0px;
+}
+.bocuc nav a:hover{
+    color: yellow;
+    text-decoration: none;
+}
+.menu{
+    margin:4px;
+    padding: 10px;
+    border-radius: 5px;
+    list-style: none;
+    height: 40px;
+    font-size: 40px;
+    
+}
+ul.menu>li>a{
+    display:block;
+    line-height: 40px;
+    text-decoration: none;
+    padding-left: 60px;
+    color: white;
+}
+ul.menu>li>a:hover{
+    color:#F6Ea41;
+    font-weight:bolder;
+}
+ul.menu>li{
+    float: left;
+    margin:0 5px;
+    position: relative;
+}
+ul.menu>li:hover>.vmenu{
+    display: block;
+}
+.vmenu{
+    margin:2px;
+    padding:0px;
+    border-radius: 10x;
+    list-style: none;
+    width: 300px;
+    position: absolute;
+    display: none;
+    border-radius: 10px;
+    border: 3px solid white;
+}
+.vmenu>li>a{
+    display: block;
+    line-height: 50px;
+    border-bottom: 1px dotted red;
+    text-decoration: none;
+    font-variant: normal;
+    padding-left: 10px;
+    background: url('/images/anhgif.gif') no-repeat left center ;
+    color: orangered;
+    border: 1px solid black;
+    background-color:black ;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    font-size: 30px;
+}
+.vmenu>li>a:hover{
+    background: url('images/anhgif.gif')no-repeat left center; 
+    background-color:orangered;
+    color: yellow;
+    font-weight: bolder;
+    background-image: url('images/icon.png');
+}
+
+
+iframe{
+    padding: 50px 50px 40px 30px;
+}
+
+
+aside img{
+    margin-left: 200px;    
+}
+aside input{
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    font-size: 20px;
+    margin-left: 200px;
+    background-color:   yellow;
+    margin-top: 0px;
+    outline: 0;     
+    outline-style: none;     
+    outline-width: 0; 
+}
+input:hover{
+    color: red;
+    background-image: url('images/anhbocuc.jpg');
+}
+
+
+
+
+div.box{
+    width: 400px;
+    height: 420px;
+    padding: 0x;
+    margin: 30px;
+    border: 2px solid red;
+    border-radius: 7px;
+    box-shadow: 4px 4px 2px blueviolet;
+    background-color: blue;
+    background-size:100% 100% ;
+    margin-top: 10px;
+    background-image: url('images/banner.png');
+
+}
+div.box img {
+    height: 396px;
+    width: 396px;  
+    
+}
+div.box button{
+    padding: 0px;
+    margin-top: 300px;
+    margin-left: 80px;
+    background-color: red;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid black; 
+    height: 50px;
+}
+div.box button a{
+  color: black;
+  text-decoration: none;
+}
+div.box button:hover{
+    background-color: yellow;
+}
+div.khung1{
+    width: 620px;   
+    height: 190px;
+    border: 1px solid black;
+    margin-top:18px ;
+    margin-left: 100px;
+    padding: 10px;
+}
+
+div.box2 img {
+    height: 110px;
+    width: 150px;
+    margin-right: 250px;
+    margin-top: 8px;
+    float: left;
+    
+}  
+
+div.box2{
+    width: 520px;
+    height: 130px;
+    padding: 500x;
+    margin-left: 600px;
+    margin-top: -190px;
+    border: 2px solid red;
+    border-radius: 7px;
+    box-shadow: 4px 4px 2px blueviolet;
+    background-color: blue;
+    background-size:100% 100% ;
+    background-image: url('images/ngoisao.jpg');
+}
+div.box2:hover{
+    background-image: url('images/anhbocuc.jpg');
+}
+div.box3 img {
+    height: 110px;
+    width: 150px;
+    margin-right: 250px;
+    margin-top: 8px;
+    float: left;
+    
+}  
+    
+div.box3{
+    width: 520px;
+    height: 130px;
+    padding: 500x;
+    margin-left: 600px;
+    margin-top: 16px;
+    border: 2px solid red;
+    border-radius: 7px;
+    box-shadow: 4px 4px 2px blueviolet;
+    background-size:100% 100% ;
+    background-image: url('images/ngoisao.jpg');
+}
+div.box3:hover{
+    background-image: url('images/anhbocuc.jpg');
+}
+h3{
+   position: absolute;
+   margin-left: 150px;
+   font-size: 20px;
+   color: white;
+}
+h5{
+    position: absolute;
+    margin-left: 140px;
+    font-size: 16px;
+    padding: 10px;
+    color: white;
+ }
+ h3:hover{
+     color: yellow;
+ }
+ h5:hover{
+     color: yellow;
+ }
+ 
+
+
+
+ .dot {
+    cursor:pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+h2{
+    color: white;
+}
+.bocuc{
+    max-width: 1260px;
+    margin: 0 auto;
+    }
+.form-group{
+    margin:  0px;
+}
+.form-control{
+    width: 96%;
+    padding: 5px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 3px;
+    font-size: 20px;
+    color:rgb(67, 67, 196);  
+}
+.form-group label{
+    font-weight: bold;
+    font-variant: small-caps;
+    color: red;
+    font-size: 20px;
+}
+.form-control:focus{
+    background-color: yellow;
+    box-shadow: 0 0 2px red;
+    border: 1px solid yellow;
+}
+.form-button{
+    padding: 8px 30px;
+    outline:none;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    background-color:red;
+    color: rgb(1, 25, 45);
+    box-shadow: inset 0 0 20px black;
+    font-size: 20px;
+    
+}
+.form-button:hover{
+    color:rgb(34, 0, 255);
+    box-shadow: inset 0 0 20px black;
+    
+}
+.form-button:disabled{
+    color: darkgray;
+    box-shadow: inset 0 0 20px black;
+   
+}
+label{
+    font-weight: bold;
+    color: red;
+    font-size: 20px;
+}
+center{
+    color: red;
+    font-size: 30px;
+    padding: 10px;
+}
+
+button {
+    border: 2px solid white;
+    height: 50px;
+    font-size: 20px;
+    background-color: black;
+    color: red;
+}
+button a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+button a:hover{
+    color: yellow;
+}
+
+
+
+
+
+.thang{
+    font-size: 20px;
+    width: 500px;
+    height: 450px;
+    border: 1px solid black;
+    border-radius:7px ;
+    background-color: yellow;
+}
+.thang img{
+    margin-left: 30px;
+}
+#ghichu{
+    background-color: rgb(131, 127, 127);
+    color: white;
+}
+
+#quocTich{
+    width: 1220px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.thangly{
+    color: red;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+
+.lycaothang button{
+    border-radius: 10px;
+    
+    border: 2px solid red;
+}
