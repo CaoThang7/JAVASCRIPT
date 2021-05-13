@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Lab 6 bài 3</title>
+</head>
+<body>
+    <h2>ĐẶT HÀNG</h2>
+    <form onsubmit="return kiem_tra()">
+        <p>
+            <label>Sản phẩm</label>
+            <input id="san_pham"/>
+        </p>
+        <p>
+            <label>Loại</label>
+            <select id="loai">
+                <option></option>
+                <option value="DT">Điện thoại</option>
+                <option value="MT">Máy tính</option>
+            </select>
+        </p>
+        <p>
+            <label>Đơn giá</label>
+            <input id="don_gia" />
+        </p>
+        <p>
+            <label>Nơi nhận hàng</label>
+            <input type="radio" name="dia_chi" onclick="hien_thi(false)" />Nội thành
+            <input type="radio" name="dia_chi" onclick="hien_thi(true)" />Ngoại thành
+        </p>
+        <p id="phi_vc" style="display:none">
+            <label>Phí vận chuyển</label>
+            <input value="100000" readonly />
+        </p>
+        <hr />
+        <button>Đặt mua</button>
+        <ul id="Loi">
+        </ul>
+    </form>
+    <script>
+        function hien_thi(bool){
+            if(bool){
+                document.querySelector('#phi_vc').style.display='';
+            }else{
+                document.querySelector('#phi_vc').style.display='none';
+            }
+        }
+        function kiem_tra(){
+            //Kiểm tra tên sản phẩm
+            var nameSP=document.querySelector('#san_pham').value;
+            if(nameSP.length==0){
+                alert("Chưa chọn tên sản phẩm!");
+                return false;
+            }
+            //kiểm tra loại sản phẩm
+            var loai=document.querySelector('#loai').value;
+            if(loai.length==0){
+                alert("Chưa nhập chọn loại!");
+                return false;
+            }
+            //Kiểm tra đơn giá
+            var donGia=document.querySelector('#don_gia').value;
+            if(donGia.length==0){
+                alert("Chưa nhập đơn giá!");
+                return false;
+            }
+             //Kiểm tra nhập nơi giao hàng
+             var check=false;
+             var dc=document.querySelectorAll('[name="dia_chi"]');
+             dc.forEach(a=>{
+               if(a.checked){
+                   check=true;
+               }
+             });
+            if(check==false){
+                alert("Chưa chọn nơi giao hàng!");
+                return false;
+            }
+        }
+        </script>
+</body>
+</html>

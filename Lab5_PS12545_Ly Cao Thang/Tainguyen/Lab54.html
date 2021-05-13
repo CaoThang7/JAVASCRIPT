@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    
+    <title></title>
+    <style>
+        h3{
+            color: red;
+        }
+        button{
+            width:80px;
+            height:80px;
+            font-size: 20px;
+            background-color:rgb(211, 201, 201);
+            border: 1px solid black;
+            box-shadow: 0 0 2px red;
+        }
+    </style>
+</head>
+<body style="text-align:center">
+    <h3>TICTACTOE GAME</h3>
+    <table align="center">
+        <tr>
+            <td ><button  onclick="thang(0)" data-pos="00" ></button></td>
+            <td ><button  onclick="thang(1)"  data-pos="01"></button></td>
+            <td ><button  onclick="thang(2)" data-pos="02"></button></td>
+        </tr>
+        <tr>
+            <td ><button  onclick="thang(3)" data-pos="10"></button></td>
+            <td ><button  onclick="thang(4)" data-pos="11"></button></td>
+            <td ><button  onclick="thang(5)" data-pos="12"></button></td>
+        </tr>
+        <tr>
+            <td ><button  onclick="thang(6)"  data-pos="20"></button></td>
+            <td ><button  onclick="thang(7)" data-pos="21"></button></td>
+            <td ><button  onclick="thang(8)" data-pos="22"></button></td>
+        </tr>
+    </table>
+    <button type="button" id="pre">Replay!</button>
+    <script>    
+         // Cờ caro:
+            var caro=[
+                ['','',''],
+                ['','',''],
+                ['','',''],
+            ] ;
+             var flag=true;
+             var thang=document.querySelectorAll('button');
+             // nút button replay chơi lại khi không ai win
+             document.querySelector('#pre').addEventListener('click',function(){
+              alert('Chơi lại?') ;
+              location.reload();     
+              }); 
+              //vòng lập nút button
+             thang.forEach(btn =>{
+                btn.onclick=function(){
+                    if(flag){
+                    btn.innerHTML="X";
+                    btn.style.background="aqua";
+                    btn.disabled=true;
+                    var r=btn.dataset.pos;
+                    var dong=r.substr(0,1);
+                    var cot=r.substr(1,1);
+                   caro[dong][cot]="X";
+                    flag=!flag;
+                    }
+                    else{
+                    btn.innerHTML="O";
+                    btn.style.background="yellow";
+                    btn.disabled=true;
+                           var r=btn.dataset.pos;
+                    var dong=r.substr(0,1);
+                    var cot=r.substr(1,1);
+                   caro[dong][cot]="O";
+                    flag=!flag;
+                    }
+                    // khai báo funtion checkWin 
+                    var win=checkWin();
+                    if(win!=null){
+                        alert(`${win} You Winner!`);
+                        location.reload();
+                    }
+                }
+             }); 
+             // Hàm check win
+             function checkWin(){
+                // check dòng
+                 for(var i=0;i<3;i++){
+                  if(caro[i][0]==caro[i][1]&&caro[i][0]==caro[i][2]&&caro[i][0]!=''){
+                        return caro[i][0];
+                        
+                  }   
+                 }
+                 //check cột 
+                 for(var i=0;i<3;i++){
+                  if(caro[0][i]==caro[1][i]&&caro[0][i]==caro[2][i]&&caro[0][i]!=''){
+                        return caro[0][i];
+                        
+                  }   
+                 }
+                 // check cột chéo phải
+                 for(var i=0;i<3;i++){
+                  if(caro[0][0]==caro[1][1]&&caro[0][0]==caro[2][2]&&caro[0][0]!=''){
+                        return caro[0][0];
+                        
+                  }   
+                 }
+                 return null;
+                 }
+        </script>
+</body>
+</html>

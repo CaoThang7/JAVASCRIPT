@@ -1,0 +1,15 @@
+body{
+    background-image: url('images/anhbocuc.jpg');
+}
+img{
+    height: 300px; width: 700px;
+}
+.ggg{
+    padding: 20px;
+    
+}
+input{
+    width: 100px;
+    font-size: 500px;
+    margin-left: 50px;
+}

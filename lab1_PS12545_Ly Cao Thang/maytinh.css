@@ -1,0 +1,21 @@
+table{
+    background-color: black;
+    margin: auto;
+    width: 300px;
+    height: 400px;
+    font-size: 30px;
+}
+#thang{
+    width: 420px;
+    height: 180px;
+}
+.t{
+    width: 70px;
+    margin: 12px;
+    font-size: 20px;
+}
+.t:hover{
+    background-color: yellow
+    
+}
+

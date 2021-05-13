@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown Timer</title>
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="timer">
+    <div class="timer__controls">
+      <button data-time="20" class="timer__button">20 Secs</button>
+      <button data-time="300" class="timer__button">Work 5</button>
+      <button data-time="900" class="timer__button">Quick 15</button>
+      <button data-time="1200" class="timer__button">Snack 20</button>
+      <button data-time="3600" class="timer__button">Lunch Break</button>
+      <form name="customForm" id="custom">
+        <input type="text" id="thang"  placeholder="Enter Minutes">
+      </form>
+    </div>
+    <a href="baitap.html">Home</a>
+    <div class="display">
+      <h1 class="display__time-left"></h1>
+      <p class="display__end-time"></p>
+    </div>
+  </div>
+
+  <script>
+    //hiển thị đồng hồ time 5s đầu
+   var seconds=5;
+     function displayTimeLeft(){
+         var minutes=Math.floor(seconds /60);
+         var remainderSeconds=seconds%60;
+         var display=`${minutes}:${remainderSeconds<10? '0':''}${remainderSeconds}`;
+         //document.title =display;
+         document.querySelector('.display__time-left').innerHTML=display;
+         seconds--;
+         if(seconds<0)
+         clearInterval(stop);
+     }
+     function displayEndTime(){
+         var temptime=Date.now()+seconds*1000;
+         const end =new Date(temptime);
+         const hour=end.getHours();
+         const endHour=hour>12 ? hour -12:hour;
+         const endMinutes=end.getMinutes();
+         document.querySelector('.display__end-time').innerHTML=`Kết thúc lúc: ${endHour}:${endMinutes<10? '0':''}${endMinutes}`;
+     }
+     displayEndTime();
+     var stop=setInterval(displayTimeLeft,1000);
+     //gọi hàm các nút button cho người dùng chọn;
+     var stop;
+     var button=document.querySelectorAll('.timer__button');
+     button.forEach(btn=>{
+     btn.onclick=function(){
+       clearInterval(stop);
+       seconds=btn.dataset.time;
+       displayEndTime();
+       stop=setInterval(displayTimeLeft,1000);
+     }
+     });
+     //gọi hàm sự kiện submit nhập giây
+     // document.querySelector('#custom').addEventListener('submit',function(e){
+     //   e.preventDefault();
+     // clearInterval(stop);
+     //  seconds=document.querySelector('#thang').value;
+     //  displayEndTime();
+     // stop=setInterval(displayTimeLeft,1000);
+      // return false;
+    // });
+
+    //submit nhập phút
+     document.querySelector('#custom').addEventListener('submit',function(e){
+        e.preventDefault();
+      clearInterval(stop);
+       seconds=document.querySelector('#thang').value*60;
+       displayEndTime();
+      stop=setInterval(displayTimeLeft,1000);
+       return false;
+     });
+ 
+  </script>
+</body>
+</html>

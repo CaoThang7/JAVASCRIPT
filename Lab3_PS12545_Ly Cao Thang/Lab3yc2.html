@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <meta charset="utf-8">
+     <title>Bài lab 3</title>
+     <link href="" rel="stylesheet">
+ </head>   
+ <body>
+     <h1> Thầy ơi em để bài 1 em để cuối^^.Có gì thầy bật console chuyển về table nha thầy.Em bị hiển thị lỗi năm 1500 của bài 3 5 giống bài 1
+        .Thầy load lại trang là được.Em định dạng console.table hết rồi thầy yên tâm.</table>
+     </h1>
+  <script>
+     var inventors =[
+         {first:'Albert' ,last:'Einstein',year:1879, passed:1955, namsong:76},
+         {first:'Isaac' ,last:'Newton',year:1643, passed:1727, namsong:84},
+         {first:'Galileo' ,last:'Galilei',year:1564, passed:1642,namsong:78},
+         {first:'Marie' ,last:'Curie',year:1867, passed:1934,namsong:67},
+         {first:'Johannes' ,last:'Kepler',year:1571, passed:1630,namsong:59},
+         {first:'Nicolaus' ,last:'Copernicus',year:1473, passed:1543,namsong:70},
+         {first:'Max' ,last:'Planck',year:1858, passed:1947,namsong:89},
+         {first:'Katherine' ,last:'Blodgett',year:1898, passed:1979,namsong:81},
+         {first:'Ada' ,last:'LoveLace',year:1815, passed:1852,namsong:37},
+         {first:'Sarah E.' ,last:'Goode',year:1855, passed:1905,namsong:50},
+         {first:'Lise' ,last:'Meitneer',year:1878, passed:1968,namsong:90},
+         {first:'Hana' ,last:'Hammarstom',year:1829, passed:1909,namsong:80}
+     ];
+     var people =[
+         {tên:'Beck' ,họ:'Einstein'},
+         {tên:'Becker' ,họ:'Newton'},
+         {tên:'Beckett' ,họ:'Galilei'},
+         {tên:'Beddoes' ,họ:'Curie'},
+         {tên:'Beecher' ,họ:'Kepler'},
+         {tên:'Beethoven' ,họ:'Copernicus'},
+         {tên:'Begin' ,họ:'Planck'},
+         {tên:'Belloc' ,họ:'Blodgett'},
+         {tên:'Bellow' ,họ:'LoveLace'},
+         {tên:'Benchley' ,họ:'Goode'},
+         {tên:'Benenson' ,họ:'Meitneer'},
+         {tên:'Ben-Gurion' ,họ:'Hammarstom'}
+     ];
+       
+      
+      
+      //map
+      //2.Cung cấp danh sách các nhà phát minh,thông tin gồm họ tên 
+      var Name= inventors.map(hoten=>{
+            return hoten['last'];
+         });
+         console.log(`Bài 2 xuất họ tên:`)
+         console.log(`Họ:`);
+         console.table(Name);
+      var Name= inventors.map(hoten=>{
+            return hoten['first'];
+         });
+         console.log(`Tên:`);
+         console.table(Name);
+        
+      //3.Sắp xếp năm sinh tăng dần
+        console.log(`Bài 3 sắp xếp năm tăng dần:`)
+        var sapxep= inventors.sort((a,b)=>{
+            if(a['year']>b['year']){
+             return 1;
+          }else{
+               return -1;
+             }
+        });
+         console.table(sapxep);  
+
+       //4.Tính tổng số năm sinh của tất cả
+       console.log(`Bài 4 tính tổng năm:`)
+        //tổng năm sinh
+        var tong= inventors.reduce((s,car)=>{
+                s=s+car['year'];
+                return s;
+         },0);
+         console.table(`Tổng year sinh ra của tất cả: ${tong}`);
+
+         //tổng năm sống
+         var tong= inventors.reduce((s,car)=>{
+                s=s+car['namsong'];
+                return s;
+         },0);
+         console.table(`Tổng năm sống của tất cả: ${tong}`);
+
+         //5.Sort the inventors by year lived
+         console.log(`Bài 5 Sắp xếp tên thứ tự abc theo đúng năm sinh:`)
+         var sapxep= inventors.sort((a,b)=>{
+            if(a['last']>b['last']){
+             return 1;
+          }else{
+               return -1;
+             }
+         });
+         console.table(sapxep); 
+
+        //6.sort Exercise
+        //Sort the people alphabetically by last name
+        console.log(`Bài 6 Sắp xếp tên họ theo thứ tự abc:`)
+        var sapxep= people.sort((a,b)=>{
+            if(a['họ']>b['họ']){
+             return 1;
+          }else{
+               return -1;
+             }
+        });
+         console.table(sapxep); 
+
+          //Filter
+       //1.Những nhà phát minh sinh năm 1500
+       console.log(`Bài 1 Nhà phát minh sinh năm 1500:`)
+         var namsinh=inventors.filter(invent=>{
+        return invent['year']=1500;
+        });
+         console.table(namsinh); 
+
+    // 7. Reduce Exercise
+    // Sum up the instances of each of these
+    console.log(`Bài 7 vượt quá tầm hiểu biết của em ^^`)
+    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+      </script>
+ </body>
+ </html> 

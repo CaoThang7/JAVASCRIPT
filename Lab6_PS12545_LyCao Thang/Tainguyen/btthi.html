@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Thi</title>
+        <meta charset="utf-8">
+        </head>
+        <body>
+<form onsubmit="return kiemtra()">
+<fieldset>
+    <legend>
+        <h2>Nhập pass là mã sinh viên</h2>
+    </legend>
+    <br>
+    <label>họ tên:</label>
+    <br>
+    <input type="hoten" id="hoten">
+</fieldset>
+<br>
+<label>Giới tính:</label>
+<br>
+<input type="radio" name="ggg">Nam 
+<input type="radio" name="ggg">Nữ
+<br>
+<button>Đăng kí</button>
+</form>
+<ul id="loi">
+
+</ul>
+<script>
+function kiemtra(){
+    var isvalid=true;
+    sumloi="";
+
+
+    //kiem tra 
+    var hoTen=document.querySelector('#hoten').value;
+    if(hoTen.length==0){
+        isvalid=false;
+        sumloi+="<li>lỗi</li>";
+    }
+    
+    var hopLe=false;
+    var gt=document.querySelectorAll('[name="ggg"]');
+    gt.forEach(s=>{
+    if(s.checked){
+        hopLe=true;
+    }
+    });
+    if(hopLe==false){
+        isvalid=false;
+        sumloi+="<li>lỗi</li>";
+    }
+   
+
+
+
+
+
+
+    if(isvalid==false){
+        document.querySelector('#loi').innerHTML=sumloi;
+        document.querySelector('#loi').style.color="red";
+    }
+    return isvalid;
+}
+
+    </script>
+
+        </body>
+</html>

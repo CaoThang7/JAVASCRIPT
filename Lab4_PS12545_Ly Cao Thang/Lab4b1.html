@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+<title>Bài 1 lab 4</title>
+<meta charset="utf-8">
+<link href="Lab4.css" rel="stylesheet">
+ </head>
+ <body>
+     <div class="mystyle">
+     <h1>App Giải Phương Trình Bậc 2: AX<sup>2</sup>+BX+C=0</h1>
+     <form method="post" action="#">
+     <div class="form-group">
+         <div class="title">
+             A
+         </div>
+         <input type="number" id="heSoA" class="form-control">
+     </div>
+    <div class="form-group">
+       <div class="title">
+           B
+       </div>
+       <input type="number" id="heSoB" class="form-control">
+    </div>
+    <div class="form-group">
+        <div class="title">
+            C
+        </div>
+        <input type="number" id="heSoC" class="form-control">
+     </div>
+ 
+    <input type="button" value="Giải" id="btnTinh">
+     </form>
+    <h2></h2>
+    </div>
+    <script>
+        class PhuongTrinhBac2{
+            constructor(a,b,c){
+                this.A=a;this.B=b;this.C=c;
+            }
+            giai(){
+                var kq='';
+                if(this.A==0){
+                    if(this.B==0 && this.C==0){
+                        kq="Vô số nghiệm";
+                    }
+                    else if(this.B==0 && this.C !=0){
+                         kq="Vô nghiệm";
+                    }
+                    else{
+                        kq= `x=${-this.C/this.B}`;
+                    }
+                }
+                else {
+                    var delta=Math.pow(this.B,2)-4*this.A*this.C;
+                    if(delta<0)
+                    kq="Vô nghiệm";
+                    else if(delta==0){
+                        kq=`Nghiệm kép x1=x2=${-this.B/(2*this.A)}`;
+                    }
+                    else{
+                        var x1=(-this.B-Math.sqrt(delta))/(2*this.A);
+                        var x2=(-this.B + Math.sqrt(delta))/(2*this.A);
+                        kq=`x1=${x1};x2=${x2}`;
+                    }
+                }
+                return kq;
+            }
+        }
+        document.querySelector('#btnTinh').addEventListener('click',function(){
+           a=document.querySelector('#heSoA').value;
+           b=document.querySelector('#heSoB').value;
+           c=document.querySelector('#heSoC').value;
+           var pt=new PhuongTrinhBac2(a,b,c);
+           document.querySelector('h2').innerHTML=`Kết quả ${pt.giai()}`;
+        });
+        </script>
+ </body> 
+ </html>  

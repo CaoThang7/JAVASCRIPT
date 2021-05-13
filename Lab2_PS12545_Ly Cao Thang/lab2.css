@@ -1,0 +1,32 @@
+body{
+    background-image: url('images/anhbocuc.jpg');
+}
+img{
+    padding: 10px;
+    background: #ffc600;
+    filter:blur(0px);
+    height: 500px;
+    width: 700px;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+h2{
+    color: white;
+    margin: 0px;
+    float: left;
+    margin-left: 50px;
+}
+button{
+    margin: 20px;
+    height: 20px;
+    width: 100px;
+}
+.ggg{
+    margin-left: 230px;
+   font-size: 20px;
+   margin-top: 10px;
+}
+h1{
+    margin-right: 150px;
+    color: white;
+}

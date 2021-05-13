@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <meta charset="utf-8">
+     <title>Bài lab 2</title>
+     <link href="lab2.css" rel="stylesheet">
+     <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            document.querySelector('#padding').addEventListener('mousemove', function(){
+                document.querySelector('img').style.padding=this.value+"px";
+            });
+            document.querySelector('.blur').addEventListener('mousemove', function(){
+                 document.querySelector('img').style.filter='blur('+this.value+ 'px)';
+            });
+            document.querySelector('#color').addEventListener('change', function(){
+                document.querySelector('img').style.background=this.value;
+            });
+            document.querySelector('#color').addEventListener('change', function(){
+                document.querySelector('img').style.color=this.value;
+            });
+            document.querySelector('#color').addEventListener('change', function(){
+               document.querySelector('span').style.color=this.value;
+           });
+        });
+     </script>
+ </head>   
+ <body>
+     <div class="ggg">
+    <center>
+        <h1> <span class='span'>Cập nhật style CSS với JS</span></h1>
+        <br><h2>Spacing<input id="padding" name="padding" type="range" min="10" max="400" step="1" value="10"></h2>
+    <h2>Blur<input class="blur" name="blur" type="range" min="0" max="200" step="1" value="0"></h2>
+     <h2>Base Color<input id="color" name="color" type="color" value="#ffc600" ></center>
+     </div>
+<center><img src="images/banner.png"></center>
+
+ </body>
+ </html>   

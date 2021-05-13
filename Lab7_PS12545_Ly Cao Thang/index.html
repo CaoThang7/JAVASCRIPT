@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>My website</title>
+  </head>
+  <body>
+    <div class="card" ng-app="myApp">
+      <div class="card-header">
+        pageTitle
+      </div>
+      <div class="card-body" ng-controller="myController">
+          <div class='row'>
+              <div class='col-md-2'>Filter by:</div>
+              <div class='col-md-4'>
+                  <input type='text' name='listFilter' ng-model="search"/>
+              </div>
+              <div class="col-md-4"></div>
+              <div class="col-md-2"></div>
+          </div>
+          <div class='row'>
+              <div class='col-md-6'>
+                  <h4>Filtered by: {{search}}</h4>
+              </div>
+          </div>
+          <table class=" table table-bordered">
+            <thead>
+                <tr>
+                  <th>
+                    <button class='btn btn-primary' ng-click="showHide()">
+                        {{isShow?'An':'Hien'}} Image
+                    </button>
+                  </th>
+                  <th>Product</th>
+                  <th>Code</th>
+                  <th>Available</th>
+                  <th>Price </th>
+                  <th>5 Star Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat='p in products|filter:search'>
+                  <td>
+                    <img src="{{p['imageUrl']}}" width=50 ng-show='isShow'>
+                  </td>
+                  <td>
+                    <a href="#" >
+                      {{p['productName']}}
+                    </a>
+                  </td>
+                  <td>{{p['productCode']}}</td>
+                  <td>{{p['productDate']}}</td>
+                  <td>{{p['price']|currency}}</td>
+                  <td>
+                      <div style="width: 92px">
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                      </div>
+                  </td>
+                </tr>
+
+            </tbody>
+        </table>
+      </div>
+    </div>
+</body>
+<script>
+  var app=angular.module('myApp',[]);
+  app.controller('myController',function($scope){
+      $scope.products=[
+          {
+              "productId": 1,
+              "productName": "Leaf Rake",
+              "productCode": "GDN-0011",
+              "releaseDate": "March 19, 2016",
+              "description": "Leaf rake with 48-inch wooden handle.",
+              "price": 19.95,
+              "starRating": 3.2,
+              "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+          },
+          {
+              "productId": 2,
+              "productName": "Garden Cart",
+              "productCode": "GDN-0023",
+              "releaseDate": "March 18, 2016",
+              "description": "15 gallon capacity rolling garden cart",
+              "price": 32.99,
+              "starRating": 4.2,
+              "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+          },
+          {
+              "productId": 5,
+              "productName": "Hammer",
+              "productCode": "TBX-0048",
+              "releaseDate": "May 21, 2016",
+              "description": "Curved claw steel hammer",
+              "price": 8.9,
+              "starRating": 4.8,
+              "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+          },
+          {
+              "productId": 8,
+              "productName": "Saw",
+              "productCode": "TBX-0022",
+              "releaseDate": "May 15, 2016",
+              "description": "15-inch steel blade hand saw",
+              "price": 11.55,
+              "starRating": 3.7,
+              "imageUrl": "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
+          },
+          {
+              "productId": 10,
+              "productName": "Video Game Controller",
+              "productCode": "GMG-0042",
+              "releaseDate": "October 15, 2015",
+              "description": "Standard two-button video game controller",
+              "price": 35.95,
+              "starRating": 4.6,
+              "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
+          }
+      ];
+      $scope.isShow=true;
+      $scope.search='';
+      $scope.showHide=function(){
+          $scope.isShow=!$scope.isShow
+      }
+  })
+</script>
+</html>

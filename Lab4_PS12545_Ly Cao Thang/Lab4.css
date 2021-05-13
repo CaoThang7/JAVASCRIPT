@@ -1,0 +1,21 @@
+.mystyle{
+    color: red;
+}
+.form-group{
+    width: 100%;
+    margin: 10px;
+
+}
+.form-group>.title{
+    width: 100%;
+    font-variant: small-caps;
+
+}
+.form-group>.form-control{
+    width: 100%;
+    padding: 10px;
+}
+.form-group>.form-control:hover{
+    background-image: url('images/ngoisao.jpg');
+    color: yellow;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <meta charset="utf-8">
+     <title>Bài lab 3</title>
+     <link href="lab3.css" rel="stylesheet">
+ </head>   
+ <body>
+    <div class="ggg">
+        <input id="PRE" type="button" value="Lùi">
+        <input id="NEXT" type="button" value="Tiến">
+        <input id="FIRT" type="button" value="FIRT">
+        <input id="LAST" type="button" value="LAST">
+        </div>
+<img src="images/banner.png" height="200" width="200" >
+    
+    <script>
+        var album=['banner.png','series.png','starwars2.png',];
+        var gggimg=0;
+        document.querySelector('#NEXT').addEventListener('click',function(){
+          if(gggimg==album.length-1){
+              gggimg=0;
+          }
+          else{
+              gggimg++;
+          }
+             document.querySelector('img').src=`images/${album[gggimg]}`;
+        });
+        document.querySelector('#PRE').addEventListener('click',function(){
+          if(gggimg==album.length-1){
+               gggimg--;
+            }
+            else{
+               gggimg=0;
+            }
+            document.querySelector('img').src=`images/${album[gggimg]}`;
+        } );
+        document.querySelector('#FIRT').addEventListener('click',function(){
+            if(gggimg==album.length-1){
+                gggimg=0;
+            }
+            if(gggimg==album.length-2){
+                gggimg=0;
+            }
+          
+            document.querySelector('img').src=`images/${album[gggimg]}`;
+        } );
+        
+        document.querySelector('#LAST').addEventListener('click',function(){
+           gggimg=album.length-1;
+            document.querySelector('img').src=`images/${album[gggimg]}`;
+        } );
+         </script>
+     
+ </body>
+ </html> 

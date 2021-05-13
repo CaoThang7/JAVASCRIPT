@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://ww.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>Bài 4 lab 6</title>
+</head>
+<body>
+<h2> Đăng kí</h2>
+<form onsubmit="return kiemTra()">
+<p>
+    <label>Ho Ten</label>
+    <input type="text" id="hoTen">
+    </p>
+    <p>
+        <label>Giới tính</label>
+        <input type="radio" name="sex">Nam
+        <input type="radio" name="sex">Nữ
+        </p>
+    <p>
+        <label>Số điện thoại</label>
+        <input type="text" id="phone">
+    </p>
+    <button>Đăng kí ngay</button>
+</form>
+<ul id="loi">
+</ul>
+<script>
+ function kiemTra(){
+     var isvalid=true;
+     var sumloi="";
+     //code kiểm tra hợp lệ các thành phần trong thẻ form
+     var ht=document.querySelector('#hoTen').value;
+     if(ht.length==0){
+         isvalid=false;
+         sumloi+="<li>Bạn chưa nhập họ tên</li>";
+     }
+     //kiểm tra giới tính
+     var hopLe=false;
+     var gt=document.querySelectorAll('[name="sex"]');
+     gt.forEach(s=>{
+     if(s.checked){
+         hopLe=true;
+     }
+     });
+     if(hopLe==false){
+         isvalid=false;
+         sumloi+="<li>Bạn chưa chọn giới tính</li>";
+     }
+     //Kiểm tra số điện thoại
+     var phone=document.querySelector('#phone').value;
+     if(phone.length<10||phone.length>11||isNAN(phone)){
+         isvalid=false;
+         sumloi+="<li>Số điện thoại không hợp lệ!</li>";
+     }
+    
+     //Xuất lỗi
+     if(isvalid==false){
+         document.querySelector('#loi').innerHTML=sumloi;
+         document.querySelector('#loi').style.color="Blue";
+     }
+    return isvalid;
+ }
+
+</script>
+    </body>
+    </html>

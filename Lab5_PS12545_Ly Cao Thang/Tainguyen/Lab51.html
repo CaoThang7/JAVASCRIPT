@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Bán hàng</title>
+</head>
+<body>
+    <label id="pro" data-price="1950">iPhone 9</label>
+    <input id="qty" type="number" value="1" />
+    <button>OK</button>
+    <hr />
+    <h3>Name: <span id="name">?</span></h3>
+    <h3>Amount: <span id="amount">?</span></h3>
+    <script>
+       document.querySelector('button').addEventListener('click',function(){
+        document.querySelector('#name').innerHTML=document.querySelector('#pro').innerHTML;
+        //lay gia 
+        var price=document.querySelector('#pro').dataset.price;
+        //lay so luong
+        var quantity=document.querySelector('#qty').value;
+        document.querySelector('#amount').innerHTML=price*quantity;
+       
+
+       });
+        </script>
+</body>
+</html>

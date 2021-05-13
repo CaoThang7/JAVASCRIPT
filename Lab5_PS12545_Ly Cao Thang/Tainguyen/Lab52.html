@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+    </script>
+</head>
+<body>
+    <h3>DANH MỤC HÀNG HÓA</h3>
+    <table border="1">
+        <tr>
+            <td>iPhone9</td>
+            <td>$2700</td>
+            <td><button onclick="them(this)">Thêm</button></td>
+        </tr>
+        <tr>
+            <td>Sumsung Star</td>
+            <td>$1500</td>
+            <td><button onclick="them(this)">Thêm</button></td>
+        </tr>
+        <tr>
+            <td>Nokia 2020</td>
+            <td>$1200</td>
+            <td><button onclick="them(this)">Thêm</button></td>
+        </tr>
+        <tr>
+            <td>Sony Xperia</td>
+            <td>$1700</td>
+            <td><button onclick="them(this)">Thêm</button></td>
+        </tr>
+    </table>
+
+    <h3>GIỎ HÀNG CỦA BẠN</h3>
+    <table border="1" id="cart">
+    </table>
+    <h3 id="tongtien"></h3>
+</div>
+<script>
+    function them(btn){
+        var row =btn.parentNode.parentNode.cloneNode(true);
+        row.querySelector('button').innerHTML="Xoá";
+        row.querySelector('button').setAttribute('onclick','xoa(this)');
+        document.querySelector('#cart').append(row);
+        tongTien();
+    }
+    function xoa(btn){
+      var row=btn.parentNode.parentNode;
+      document.querySelector('#cart').removeChild(row);
+      tongTien();
+    }
+    function tongTien(){
+        var tong=0;
+        var rows=document.querySelector('#cart').querySelectorAll('tr');// lay cac dong trong bang cart vao trong row 
+        rows.forEach(r =>{
+            tong=tong+parseInt(r.cells[1].innerHTML.substr(1));
+        });
+        //xuat ket quantity
+        document.querySelector('#tongtien').innerHTML=`Tổng tiền thanh toán:${tong}`;
+    }
+    </script>
+</body>
+</html>
